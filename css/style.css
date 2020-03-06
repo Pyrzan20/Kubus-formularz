@@ -1,0 +1,425 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/background-wood.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+aside.plate {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+}
+
+aside>img {
+    width: 100%;
+}
+
+main {
+    width: 60%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #DBDADC;
+}
+
+main>header {
+    font-size: 60px;
+    font-weight: normal;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+main>section>.fas {
+    font-size: 300px;
+    display: none;
+    transition: .3s;
+    padding: 10px;
+    text-shadow: 0 1px 0 #999999,
+        0 2px 0 #888888,
+        0 3px 0 #777777,
+        0 4px 0 #666666,
+        0 5px 0 #555555,
+        0 6px 0 #444444,
+        0 7px 0 #333333,
+        0 8px 7px rgba(0, 0, 0, 0.4),
+        0 9px 10px rgba(0, 0, 0, 0.2);
+}
+
+main>section>.fas.active {
+    display: inline;
+}
+
+main>section>section {
+    margin-top: 30px;
+    font-size: 60px;
+    line-height: 80px;
+}
+
+main>section>section>.fas {
+    display: inline-block;
+    border-radius: 50%;
+    /* text-shadow: 0 1px 0 #999999,
+        0 2px 0 #888888,
+        0 3px 0 #777777,
+        0 4px 0 #666666,
+        0 5px 0 #555555,
+        0 6px 0 #444444,
+        0 7px 0 #333333,
+        0 8px 7px rgba(0, 0, 0, 0.4),
+        0 9px 10px rgba(0, 0, 0, 0.2); */
+}
+
+main>section>section>.fas:hover {
+    color: #200C0A;
+    background-color: #DBDADC;
+    cursor: pointer;
+}
+
+main>section>section>p {
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    line-height: 70px;
+    text-align: center;
+    padding: 0;
+    color: #DBDADC;
+    font-size: 60px;
+    background-color: transparent;
+    border: 5px solid #DBDADC;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+main>section>section>button {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+main>section>section>button>a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 60px;
+    background-color: transparent;
+    color: #DBDADC;
+}
+
+main>section>section>button:hover>a,
+main>section>section>button:hover {
+    color: #200C0A;
+    background-color: #DBDADC;
+    border-color: #DBDADC;
+}
+
+aside.alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(33, 33, 33, .7);
+    height: 100vh;
+
+    transform: scale(0);
+    transition: .5s;
+}
+
+section#info {
+    color: #DBDADC;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    height: 300px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+section#info>header>h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+section>div>p {
+    font-size: 25px;
+    text-shadow: 2px 2px 0 #DBDADC,
+        -2px 2px 0 #DBDADC,
+        2px -2px 0 #DBDADC,
+        -2px -2px 0 #DBDADC;
+    color: black;
+}
+
+/* Alert po osiągnięciu maksymalnej liczby zamówień */
+
+aside.alert>p {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E13B21;
+    width: 100%;
+    height: 100px;
+    font-size: 70px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 100px;
+    text-align: center;
+}
+
+aside.alert>button {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(100%) translateX(-50%);
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    background-color: #DBDADC;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    transition: .2s;
+    border: 1px solid;
+}
+
+button:focus,
+input {
+    outline: none;
+}
+
+aside.alert>button:hover {
+    background-color: #200C0A;
+    color: #DBDADC;
+}
+
+aside.alert.active {
+    transform: scale(1);
+}
+
+/* formularz */
+
+main.formularz {
+    width: 60%;
+    margin-top: 40px;
+}
+
+main.formularz>form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+main.formularz>form>section.zamowienie {
+    width: 40%;
+    height: 80vh;
+}
+
+main.formularz>form>section>header {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+main.formularz>form>section.zamowienie>section.dania {
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-image: url('../img/background-form.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+main.formularz>form>section>section.dania>section {
+    border-bottom: 2px solid black;
+    width: 80%;
+    padding-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #663726;
+}
+
+main.formularz>form>section>section.dania>section:last-child {
+    border: none;
+}
+
+main.formularz>form>section>section.dania>section h2 {
+    font-size: 45px;
+}
+
+main.formularz>form>section>section.dania>section select {
+    background-color: white;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    color: #663726;
+
+    border: 2px solid #663726;
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    margin-bottom: 10px;
+}
+
+main.formularz>form>section>section.dania>section select>option {
+    /* text-align: center; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+main.formularz>form>section.zamow {
+    flex-basis: 100%;
+    margin-top: 20px;
+}
+
+main.formularz>form>section.zamow>input {
+    display: inline-block;
+    position: fixed;
+    right: 50px;
+    bottom: 20px;
+    width: 30%;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    border: 5px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+main.formularz>form>section.zamow>input:hover {
+    background-color: #D2C6C1;
+    color: #200C0A;
+    border-color: #200C0A;
+}
+
+aside.cena {
+    position: fixed;
+    bottom: 250px;
+    right: 100px;
+    color: #DBDADC;
+    font-family: 'Roboto', sans-serif;
+}
+
+aside.cena>h3 {
+    font-size: 50px;
+    border-bottom: 2px solid;
+    width: 300px;
+    text-align: right;
+}
+
+aside.cena>p {
+    text-align: right;
+    font-size: 40px;
+    text-shadow: 2px 2px 10px black,
+        2px 2px 10px black,
+        2px 2px 10px black;
+}
+
+main.podsumowanie {
+    position: relative;
+    min-height: 100vh;
+}
+
+main>section.podsumowanie {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main>section.podsumowanie>header {
+    font-size: 40px;
+    border-bottom: 5px solid;
+    width: 80%;
+    margin: 20px auto;
+    flex-grow: 1;
+}
+
+main>section.podsumowanie>div {
+    border: 2px solid;
+    width: 70%;
+    margin: 10px auto;
+    border-radius: 20px;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main>section.podsumowanie>div>p {
+    color: #fff;
+    text-shadow: none;
+    background-color: rgba(100, 100, 100, 0.3);
+    font-size: 40px;
+    line-height: 60px;
+}
+
+form.mail {
+    position: fixed;
+    bottom: 60px;
+    right: 80px;
+    text-align: right;
+}
+
+form.mail>input[type="email"] {
+    display: block;
+    width: 400px;
+    height: 50px;
+
+    text-align: center;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+form.mail>input[type="submit"] {
+    text-align: center;
+    margin-top: 50px;
+    height: 60px;
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid;
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+form.mail>input[type="submit"]:hover {
+    background-color: #D2C6C1;
+    color: #200C0A;
+}
